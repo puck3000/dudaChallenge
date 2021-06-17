@@ -1,0 +1,24 @@
+☐ Hero Img
+☐ Layout Wrapper
+☐ Lead
+    ☐ Title
+    ☐ Paragraph
+☐ Filter
+    ☐ Kategories[]
+        ☐ all
+        ☐ beer
+        ☐ wine
+        ☐ others
+        ☐ shots
+        ☐ cocktails
+        ☐ longdrinks
+        ☐ softdrinks
+☐ Search
+    ☐ Simple Search
+☐ Item list[]
+    ☐ Item Pic
+    ☐ Item Name
+    ☐ Item Ingredients
+    ☐ Item ml
+    ☐ Item price
+    ☐ Add Button
