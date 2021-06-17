@@ -1,8 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Drink from '../components/Drink'
-import Category from '../components/Drink'
 
 // MOCK DATA IMPORT
 import data from '../mockData.json'
@@ -60,7 +58,7 @@ export default function Home() {
           className='mb-12  md:mb-14'
         />
 
-        <div className='md:max-w-wrapper md:mx-auto md:px-6'>
+        <div className='md:max-w-wrapper md:mx-auto px-6'>
           {/* Lead */}
           <section className=' '>
             <h1 className='text-center text-2xl md:text-5xl mb-5'>
@@ -90,13 +88,13 @@ export default function Home() {
             />
           </div>
           {categories && showFilters && (
-            <ul className='flex flex-row justify-evenly mb-3'>
+            <ul className='text-center'>
               {categories.map((category) => {
                 return (
                   <li
                     key={category.catId}
                     onClick={() => setSelectedCategory(category)}
-                    className={`border  border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer ${
+                    className={`border mr-2 mb-2 last:mr-0 inline-block border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer ${
                       selectedCategory.catId === category.catId &&
                       'bg-white text-black'
                     }`}
@@ -109,7 +107,7 @@ export default function Home() {
           )}
 
           {/* search */}
-          <div className='w-full h-7 border border-slight-grey bg-transparent rounded-3xl mb-20 flex flex-row items-center justify-center'>
+          <div className=' h-7 border border-slight-grey bg-transparent rounded-3xl mb-20 flex flex-row items-center justify-center'>
             <svg
               fill='none'
               stroke='currentColor'
@@ -133,7 +131,7 @@ export default function Home() {
           {drinksInCategory.length ? (
             <ul className='md:grid md:grid-cols-2 gap-x-32'>
               {drinksInCategory.map((drink) => (
-                <li key={drink.id}>
+                <li className='mb-11 md:mb-20' key={drink.id}>
                   <Drink drink={drink} />
                 </li>
               ))}

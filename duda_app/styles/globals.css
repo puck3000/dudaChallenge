@@ -26,12 +26,21 @@
     font-family: 'Quicksand', 'Helvetica', sans;
     line-height: 1.1;
   }
-}
 
-/******************************************************
+  /******************************************************
 /   Base Styles
 /******************************************************/
 
-body {
-  @apply bg-main-blue text-white;
+  body {
+    @apply bg-main-blue text-white;
+  }
+}
+
+@layer components {
+  .ingredient:nth-of-type(n + 2):before {
+    content: ', ';
+  }
+  /* .ingredient:nth-of-type(n + 2):not(:last-child):before {
+    content: ', ';
+  } */
 }

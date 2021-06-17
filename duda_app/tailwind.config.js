@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         'main-blue': '#0C1D35',
         'cancer-green': '#26FF00',
+        'darker-cancer-green': '#1bb300',
         'slight-grey': '#FFFFFF52',
       },
       maxWidth: {
@@ -14,7 +15,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      margin: ['last'],
+    },
   },
   plugins: [require('@tailwindcss/forms')],
 }

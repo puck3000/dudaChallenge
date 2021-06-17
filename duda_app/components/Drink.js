@@ -1,6 +1,6 @@
 function Drink({ drink }) {
   return (
-    <article className='mb-20'>
+    <article className=''>
       <div className='flex flex-row mb-5'>
         <img
           className='w-3/5'
@@ -12,17 +12,16 @@ function Drink({ drink }) {
             <p>{drink.units[0].size}</p>
             <p>{drink.units[0].price}</p>
           </div>
-          <button className='bg-cancer-green rounded-3xl font-bold text-xl text-black py-2 mx-2'>
+          <button className='bg-cancer-green rounded-3xl font-bold text-xl text-black py-2 mx-2 transition-colors hover:text-white  hover:bg-darker-cancer-green'>
             ADD
           </button>
         </div>
       </div>
       <p className='font-bold'>{drink.name}</p>
       <ul className='flex'>
-        {/* Todo add Comma: */}
         {drink?.ingredients.map((ingredient) => {
           return (
-            <li key={ingredient} className='mr-2'>
+            <li key={ingredient} className='ingredient'>
               {ingredient}
             </li>
           )
