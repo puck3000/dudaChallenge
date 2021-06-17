@@ -49,6 +49,7 @@ export default function Home() {
       <Head>
         <title>Duda SPA Coding Challenge</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='Challenge for Duda.'></meta>
       </Head>
       <main>
         {/* hero img */}
