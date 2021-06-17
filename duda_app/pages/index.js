@@ -93,13 +93,13 @@ export default function Home() {
             />
           </div>
           {categories && showFilters && (
-            <ul className='text-center'>
+            <ul className='flex flex-row flex-wrap justify-between'>
               {categories.map((category) => {
                 return (
                   <li
                     key={category.catId}
                     onClick={() => setSelectedCategory(category)}
-                    className={`border mr-2 mb-2 last:mr-0 inline-block border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer ${
+                    className={`border  mb-2 last:mr-0 inline-block border-slight-grey rounded-2xl px-3  md:px-5 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer ${
                       selectedCategory.catId === category.catId &&
                       'bg-white text-black'
                     }`}
