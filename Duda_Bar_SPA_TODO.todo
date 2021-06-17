@@ -6,8 +6,8 @@ Analyse:
     ☐ Fragen
 
 Daten Mockup:
-    ☐ Daten für blabla Bar strukturieren
-    ☐ Json bauen
+    ✔ Daten für blabla Bar strukturieren @done(21-06-17 09:06)
+    ✔ Json bauen @done(21-06-17 09:06)
 
 Umsetzen:
     ☐ Next, Tailwind aufsetzen
