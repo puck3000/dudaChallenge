@@ -22,7 +22,6 @@ export default function Home() {
     const foundMatch = categories.find(
       (category) => category === selectedCategory.catId
     )
-    console.log(foundMatch)
     return foundMatch
   }
 
@@ -75,7 +74,7 @@ export default function Home() {
               {categories.map((category) => {
                 return (
                   <li
-                    key={category.id}
+                    key={category.catId}
                     onClick={() => setSelectedCategory(category)}
                     className='border text-white border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer'
                   >
