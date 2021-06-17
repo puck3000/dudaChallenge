@@ -52,18 +52,21 @@ export default function Home() {
       </Head>
       <main>
         {/* hero img */}
-        <Image
+        <img
           src='/assets/img/3_DrinksquareSpots_3@2x.png'
           alt='BlaBlaBla Bar Mood Image'
           width={1920}
           height={520}
+          className='mb-12  md:mb-14'
         />
 
-        <div className='md:max-w-wrapper md:mx-auto md:mt-14 px-6'>
+        <div className='md:max-w-wrapper md:mx-auto md:px-6'>
           {/* Lead */}
           <section className=' '>
-            <h1 className='text-center text-5xl mb-5'>{blablaData.barName}</h1>
-            <p className='text-center text-xl px-5 mb-11'>
+            <h1 className='text-center text-2xl md:text-5xl mb-5'>
+              {blablaData.barName}
+            </h1>
+            <p className='text-center text-base md:text-xl px-5 mb-12'>
               {blablaData.barDescription}
             </p>
           </section>
@@ -128,7 +131,7 @@ export default function Home() {
           </div>
           {/* list */}
           {drinksInCategory.length ? (
-            <ul className='grid grid-cols-2 gap-x-32'>
+            <ul className='md:grid md:grid-cols-2 gap-x-32'>
               {drinksInCategory.map((drink) => (
                 <li key={drink.id}>
                   <Drink drink={drink} />
