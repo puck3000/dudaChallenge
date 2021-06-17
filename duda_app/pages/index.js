@@ -13,6 +13,7 @@ export default function Home() {
   const [drinksInCategory, setdrinksInCategory] = useState(blablaData.drinks)
   const [selectedCategory, setSelectedCategory] = useState(categories[0])
   const [query, setQuery] = useState('')
+  const [showFilters, setShowFilters] = useState(true)
 
   const handleChange = (event) => {
     setQuery(event.target.value.toLowerCase())
@@ -67,16 +68,35 @@ export default function Home() {
             </p>
           </section>
           {/* filter */}
-
-          <h2>filter</h2>
-          {categories && (
+          <div
+            className='cursor-pointer'
+            onClick={() => setShowFilters(!showFilters)}
+          >
+            <h2
+              className='text-center mb-1 text-xs'
+              style={{ textShadow: '0 0 5px #fff' }}
+            >
+              Filter
+            </h2>
+            <img
+              src='/assets/img/np_arrow.svg'
+              alt='arrow'
+              className={`w-2 mb-10 mx-auto transform transition-transform ${
+                showFilters ? 'rotate-180' : 'a'
+              }`}
+            />
+          </div>
+          {categories && showFilters && (
             <ul className='flex flex-row justify-evenly mb-3'>
               {categories.map((category) => {
                 return (
                   <li
                     key={category.catId}
                     onClick={() => setSelectedCategory(category)}
-                    className='border text-white border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer'
+                    className={`border  border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer ${
+                      selectedCategory.catId === category.catId &&
+                      'bg-white text-black'
+                    }`}
                   >
                     {category.name}
                   </li>
@@ -107,7 +127,7 @@ export default function Home() {
             ></input>
           </div>
           {/* list */}
-          {blablaData.drinks ? (
+          {drinksInCategory.length ? (
             <ul className='grid grid-cols-2 gap-x-32'>
               {drinksInCategory.map((drink) => (
                 <li key={drink.id}>
@@ -116,7 +136,13 @@ export default function Home() {
               ))}
             </ul>
           ) : (
-            <p>No drinks for this Category available at {blablaData.barName}</p>
+            <div className='my-12 text-center'>
+              <h2 className='text-4xl mb-6'>Sorry,</h2>
+              <p>
+                but there are no drinks for this Category available at{' '}
+                {blablaData.barName}
+              </p>
+            </div>
           )}
         </div>
       </main>
