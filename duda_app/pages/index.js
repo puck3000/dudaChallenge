@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Drink from '../components/Drink'
 
 // MOCK DATA IMPORT
@@ -9,8 +9,19 @@ const blablaData = data.bars[0]
 
 export default function Home() {
   const [drinksInCategory, setdrinksInCategory] = useState(blablaData.drinks)
+  const [query, setQuery] = useState('')
 
-  console.log(drinksInCategory)
+  const handleChange = (event) => {
+    setQuery(event.target.value.toLowerCase())
+  }
+
+  useEffect(() => {
+    const filteredList = blablaData.drinks.filter((drink) =>
+      drink.name.toLocaleLowerCase().includes(query)
+    )
+    setdrinksInCategory(filteredList)
+  }, [query])
+
   return (
     <div>
       <Head>
@@ -37,6 +48,26 @@ export default function Home() {
           </section>
           {/* filter */}
           {/* search */}
+          <div className='w-full h-7 border border-slight-grey bg-transparent rounded-3xl mb-20 flex flex-row items-center justify-center'>
+            <svg
+              fill='none'
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='3'
+              viewBox='0 0 24 24'
+              className='w-3 h-3 ml-3'
+            >
+              <path d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+            </svg>
+
+            <input
+              className='w-full bg-transparent border-none h-4 text-sm'
+              type='text'
+              placeholder='search drink'
+              onChange={handleChange}
+            ></input>
+          </div>
           {/* list */}
           {blablaData.drinks ? (
             <ul className='grid grid-cols-2 gap-x-32'>

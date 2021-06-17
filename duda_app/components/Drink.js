@@ -1,5 +1,4 @@
 function Drink({ drink }) {
-  console.log(drink)
   return (
     <article className='mb-20'>
       <div className='flex flex-row mb-5'>
@@ -22,7 +21,11 @@ function Drink({ drink }) {
       <ul className='flex'>
         {/* Todo add Comma: */}
         {drink?.ingredients.map((ingredient) => {
-          return <li className='mr-2'>{ingredient}</li>
+          return (
+            <li key={ingredient} className='mr-2'>
+              {ingredient}
+            </li>
+          )
         })}
       </ul>
     </article>
