@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'main-blue': '#0C1D35',
+        'cancer-green': '#26FF00',
       },
       maxWidth: {
         wrapper: '814px',

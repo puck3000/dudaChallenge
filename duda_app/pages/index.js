@@ -1,19 +1,23 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
+import Drink from '../components/Drink'
 
 // MOCK DATA IMPORT
 import data from '../mockData.json'
 const blablaData = data.bars[0]
 
 export default function Home() {
-  console.log(blablaData)
+  const [drinksInCategory, setdrinksInCategory] = useState(blablaData.drinks)
+
+  console.log(drinksInCategory)
   return (
     <div>
       <Head>
         <title>Duda SPA Coding Challenge</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='bg-main-blue h-screen w-screen'>
+      <main>
         {/* hero img */}
 
         <Image
@@ -23,12 +27,10 @@ export default function Home() {
           height={520}
         />
 
-        <div className='md:max-w-wrapper md:mx-auto md:mt-14'>
+        <div className='md:max-w-wrapper md:mx-auto md:mt-14 px-6'>
           {/* Lead */}
-          <section className='text-white '>
-            <h1 className='text-white text-center text-5xl mb-5'>
-              {blablaData.barName}
-            </h1>
+          <section className=' '>
+            <h1 className='text-center text-5xl mb-5'>{blablaData.barName}</h1>
             <p className='text-center text-xl px-5 mb-11'>
               {blablaData.barDescription}
             </p>
@@ -36,6 +38,17 @@ export default function Home() {
           {/* filter */}
           {/* search */}
           {/* list */}
+          {blablaData.drinks ? (
+            <ul className='grid grid-cols-2 gap-32'>
+              {drinksInCategory.map((drink) => (
+                <li key={drink.id}>
+                  <Drink drink={drink} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No drinks for this Category available at {blablaData.barName}</p>
+          )}
         </div>
       </main>
     </div>

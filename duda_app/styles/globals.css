@@ -25,6 +25,13 @@
   html {
     font-family: 'Quicksand', 'Helvetica', sans;
     line-height: 1.1;
-    @apply tracking-wider;
   }
+}
+
+/******************************************************
+/   Base Styles
+/******************************************************/
+
+body {
+  @apply bg-main-blue text-white;
 }
