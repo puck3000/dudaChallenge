@@ -59,11 +59,6 @@ export default function Home() {
             objectFit='cover'
           />
         </div>
-        {/* <img
-          src='/assets/img/3_DrinksquareSpots_3@2x.png'
-          alt='BlaBlaBla Bar Mood Image'
-          className='object-cover mb-12 md:object-fit h-80 md:w-full md:mb-14'
-        /> */}
 
         <div className='px-6 md:max-w-wrapper md:mx-auto'>
           {/* Lead */}
@@ -126,12 +121,15 @@ export default function Home() {
             >
               <path d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
             </svg>
-
+            <label for='search' className='sr-only'>
+              Search
+            </label>
             <input
               className='w-full h-4 bg-transparent border-none '
               type='text'
               placeholder='search drink'
               onChange={handleChange}
+              name='search'
             ></input>
           </div>
           {/* list */}

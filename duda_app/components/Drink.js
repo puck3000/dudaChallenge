@@ -1,18 +1,23 @@
+import Image from 'next/image'
+
 function Drink({ drink }) {
   return (
     <article className=''>
       <div className='flex flex-row mb-5'>
-        <img
-          className='w-3/5'
-          src={drink.img}
-          alt={`Picture of a ${drink.name}`}
-        />
-        <div className='ml-7 text-center text-xl w-2/5 flex flex-col justify-between'>
+        <div className='w-3/5'>
+          <Image
+            src={drink.img}
+            height='500'
+            width='500'
+            alt={`Picture of a ${drink.name}`}
+          />
+        </div>
+        <div className='flex flex-col justify-between w-2/5 text-xl text-center ml-7'>
           <div>
             <p>{drink.units[0].size}</p>
             <p>{drink.units[0].price}</p>
           </div>
-          <button className='bg-cancer-green rounded-3xl font-bold text-xl text-black py-2 mx-2 transition-colors hover:text-white  hover:bg-darker-cancer-green'>
+          <button className='py-2 mx-2 text-xl font-bold text-black transition-colors bg-cancer-green rounded-3xl hover:text-white hover:bg-darker-cancer-green'>
             ADD
           </button>
         </div>
