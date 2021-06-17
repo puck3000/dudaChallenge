@@ -1,0 +1,29 @@
+{
+  "bars": [
+    {
+      "barName": "bla bla bla Bar",
+      "barDescription": "In der Bar und Smokers’ Lounge kann man sich hervorragend den Genüssen des Lebens hingeben. Mit je 50 Plätzen gibt es ausreichend Platz, sich frei zu entfalten. Bezüglich Cocktail- und Zigarrensortiment bleiben keine Wünsche offen. In der Smokers’ Lounge kann man sich gediegen zurückziehen und ungestört dem Genuss des Rauchens frönen.",
+      "categories": [
+        "beer",
+        "wine",
+        "others",
+        "shots",
+        "cocktails",
+        "longdrinks",
+        "softdrinks"
+      ],
+      "drinks": [
+        {
+          "name": "Caipirinha",
+          "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
+          "units": [{ "size": "0.3 L", "price": "14.-" }]
+        },
+        {
+          "name": "Cosmopolitan",
+          "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
+          "units": [{ "size": "0.3 L", "price": "14.-" }]
+        }
+      ]
+    }
+  ]
+}
