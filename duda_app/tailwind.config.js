@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'main-blue': '#0C1D35',
       },
+      maxWidth: {
+        wrapper: '814px',
+      },
     },
   },
   variants: {
