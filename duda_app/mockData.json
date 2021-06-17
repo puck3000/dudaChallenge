@@ -27,6 +27,34 @@
           "img": "/assets/img/cosmopolitan.jpg",
           "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
           "units": [{ "size": "0.3 L", "price": "CHF 14.-" }]
+        },
+        {
+          "id": 3,
+          "name": "Caipirinha",
+          "img": "/assets/img/caipirinha.jpg",
+          "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
+          "units": [{ "size": "0.3 L", "price": "CHF 14.-" }]
+        },
+        {
+          "id": 4,
+          "name": "Cosmopolitan",
+          "img": "/assets/img/cosmopolitan.jpg",
+          "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
+          "units": [{ "size": "0.3 L", "price": "CHF 14.-" }]
+        },
+        {
+          "id": 5,
+          "name": "Caipirinha",
+          "img": "/assets/img/caipirinha.jpg",
+          "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
+          "units": [{ "size": "0.3 L", "price": "CHF 14.-" }]
+        },
+        {
+          "id": 6,
+          "name": "Cosmopolitan",
+          "img": "/assets/img/cosmopolitan.jpg",
+          "ingredients": ["Cachaca", "Limetten", "Rohrzucker"],
+          "units": [{ "size": "0.3 L", "price": "CHF 14.-" }]
         }
       ]
     }

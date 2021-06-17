@@ -39,7 +39,7 @@ export default function Home() {
           {/* search */}
           {/* list */}
           {blablaData.drinks ? (
-            <ul className='grid grid-cols-2 gap-32'>
+            <ul className='grid grid-cols-2 gap-x-32'>
               {drinksInCategory.map((drink) => (
                 <li key={drink.id}>
                   <Drink drink={drink} />
