@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Drink from '../components/Drink'
+import Image from 'next/image'
 
 // MOCK DATA IMPORT
 import data from '../mockData.json'
@@ -50,11 +51,19 @@ export default function Home() {
       </Head>
       <main>
         {/* hero img */}
-        <img
+        <div className='relative mb-12 h-80'>
+          <Image
+            src='/assets/img/3_DrinksquareSpots_3@2x.png'
+            alt='BlaBlaBla Bar Mood Image'
+            layout='fill'
+            objectFit='cover'
+          />
+        </div>
+        {/* <img
           src='/assets/img/3_DrinksquareSpots_3@2x.png'
           alt='BlaBlaBla Bar Mood Image'
           className='object-cover mb-12 md:object-fit h-80 md:w-full md:mb-14'
-        />
+        /> */}
 
         <div className='px-6 md:max-w-wrapper md:mx-auto'>
           {/* Lead */}
