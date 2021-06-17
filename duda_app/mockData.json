@@ -1,18 +1,19 @@
 {
+  "categories": [
+    { "name": "all", "catId": 0 },
+    { "name": "beer", "catId": 1 },
+    { "name": "wine", "catId": 2 },
+    { "name": "others", "catId": 3 },
+    { "name": "shots", "catId": 4 },
+    { "name": "cocktails", "catId": 5 },
+    { "name": "longdrinks", "catId": 6 },
+    { "name": "softdrinks", "catId": 7 }
+  ],
   "bars": [
     {
       "barId": 1,
       "barName": "Bla bla bla Bar",
       "barDescription": "In der Bar und Smokers’ Lounge kann man sich hervorragend den Genüssen des Lebens hingeben. Mit je 50 Plätzen gibt es ausreichend Platz, sich frei zu entfalten. Bezüglich Cocktail- und Zigarrensortiment bleiben keine Wünsche offen. In der Smokers’ Lounge kann man sich gediegen zurückziehen und ungestört dem Genuss des Rauchens frönen.",
-      "categories": [
-        "beer",
-        "wine",
-        "others",
-        "shots",
-        "cocktails",
-        "longdrinks",
-        "softdrinks"
-      ],
       "drinks": [
         {
           "id": 1,

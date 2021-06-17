@@ -2,25 +2,47 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Drink from '../components/Drink'
+import Category from '../components/Drink'
 
 // MOCK DATA IMPORT
 import data from '../mockData.json'
 const blablaData = data.bars[0]
+const categories = data.categories
 
 export default function Home() {
   const [drinksInCategory, setdrinksInCategory] = useState(blablaData.drinks)
+  const [selectedCategory, setSelectedCategory] = useState(categories[0])
   const [query, setQuery] = useState('')
 
   const handleChange = (event) => {
     setQuery(event.target.value.toLowerCase())
   }
 
+  const filterByCategoryId = (categories) => {
+    const foundMatch = categories.find(
+      (category) => category === selectedCategory.catId
+    )
+    console.log(foundMatch)
+    return foundMatch
+  }
+
   useEffect(() => {
-    const filteredList = blablaData.drinks.filter((drink) =>
+    const listFilteredByTitle = blablaData.drinks.filter((drink) =>
       drink.name.toLocaleLowerCase().includes(query)
     )
-    setdrinksInCategory(filteredList)
+    setdrinksInCategory(listFilteredByTitle)
   }, [query])
+
+  useEffect(() => {
+    const listFilteredByCategory = blablaData.drinks.filter((drink) =>
+      filterByCategoryId(drink.categories)
+    )
+    if (selectedCategory.catId === 0) {
+      setdrinksInCategory(blablaData.drinks)
+    } else {
+      setdrinksInCategory(listFilteredByCategory)
+    }
+  }, [selectedCategory])
 
   return (
     <div>
@@ -30,7 +52,6 @@ export default function Home() {
       </Head>
       <main>
         {/* hero img */}
-
         <Image
           src='/assets/img/3_DrinksquareSpots_3@2x.png'
           alt='BlaBlaBla Bar Mood Image'
@@ -47,6 +68,24 @@ export default function Home() {
             </p>
           </section>
           {/* filter */}
+
+          <h2>filter</h2>
+          {categories && (
+            <ul className='flex flex-row justify-evenly mb-3'>
+              {categories.map((category) => {
+                return (
+                  <li
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category)}
+                    className='border text-white border-slight-grey rounded-2xl px-3 py-1 hover:bg-white hover:text-black transition-colors cursor-pointer'
+                  >
+                    {category.name}
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+
           {/* search */}
           <div className='w-full h-7 border border-slight-grey bg-transparent rounded-3xl mb-20 flex flex-row items-center justify-center'>
             <svg
@@ -62,7 +101,7 @@ export default function Home() {
             </svg>
 
             <input
-              className='w-full bg-transparent border-none h-4 text-sm'
+              className='w-full bg-transparent border-none h-4 '
               type='text'
               placeholder='search drink'
               onChange={handleChange}
