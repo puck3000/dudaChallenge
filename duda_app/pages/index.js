@@ -53,18 +53,16 @@ export default function Home() {
         <img
           src='/assets/img/3_DrinksquareSpots_3@2x.png'
           alt='BlaBlaBla Bar Mood Image'
-          width={1920}
-          height={520}
-          className='mb-12  md:mb-14'
+          className='object-cover mb-12 md:object-fit h-80 md:w-full md:mb-14'
         />
 
-        <div className='md:max-w-wrapper md:mx-auto px-6'>
+        <div className='px-6 md:max-w-wrapper md:mx-auto'>
           {/* Lead */}
-          <section className=' '>
-            <h1 className='text-center text-2xl md:text-5xl mb-5'>
+          <section className=''>
+            <h1 className='mb-5 text-2xl text-center md:text-5xl'>
               {blablaData.barName}
             </h1>
-            <p className='text-center text-base md:text-xl px-5 mb-12'>
+            <p className='px-5 mb-12 text-base text-center md:text-xl'>
               {blablaData.barDescription}
             </p>
           </section>
@@ -74,7 +72,7 @@ export default function Home() {
             onClick={() => setShowFilters(!showFilters)}
           >
             <h2
-              className='text-center mb-1 text-xs'
+              className='mb-1 text-xs text-center'
               style={{ textShadow: '0 0 5px #fff' }}
             >
               Filter
@@ -107,7 +105,7 @@ export default function Home() {
           )}
 
           {/* search */}
-          <div className=' h-7 border border-slight-grey bg-transparent rounded-3xl mb-20 flex flex-row items-center justify-center'>
+          <div className='flex flex-row items-center justify-center mb-20 bg-transparent border h-7 border-slight-grey rounded-3xl'>
             <svg
               fill='none'
               stroke='currentColor'
@@ -121,7 +119,7 @@ export default function Home() {
             </svg>
 
             <input
-              className='w-full bg-transparent border-none h-4 '
+              className='w-full h-4 bg-transparent border-none '
               type='text'
               placeholder='search drink'
               onChange={handleChange}
@@ -138,7 +136,7 @@ export default function Home() {
             </ul>
           ) : (
             <div className='my-12 text-center'>
-              <h2 className='text-4xl mb-6'>Sorry,</h2>
+              <h2 className='mb-6 text-4xl'>Sorry,</h2>
               <p>
                 but there are no drinks for this Category available at{' '}
                 {blablaData.barName}
